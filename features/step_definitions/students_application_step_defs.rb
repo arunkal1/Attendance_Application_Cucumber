@@ -1,6 +1,12 @@
 Given("I am on the students page OR a groups page") do
   student_page.visit_students
-  sleep 10
+  sleep 1
+  student_page.click_student "Dan"
+  sleep 1
+  student_page.visit_students
+  sleep 1
+  student_page.select_new_student
+  sleep 2
 end
 
 When("I click on a student") do
