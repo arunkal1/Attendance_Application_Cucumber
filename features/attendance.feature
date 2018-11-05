@@ -13,24 +13,24 @@ Given I am on the Attendance form page
 When I pick a group
 And choose an invalid date before the start date
 And click next
-Then I shouldn't be able to add attendance for that date
+Then I shouldn't be able to add attendance for date in 2003
 
 Scenario: I want to check if I'm not able to add attendance for a date after the group's given end date
 Given I am on the Attendance form page
 When I pick a group
 And choose an invalid date after the end date
 And click next
-Then I shouldn't be able to add attendance for that date
+Then I shouldn't be able to add attendance for date in 2019
 
 #
-Scenario: I am able to click on a group
-
-  Given I am on the Homepage
-  When I click on a group
-  Then I should be redirected to the individual page for that group
-
-Scenario: I am able to click on students name
-
-  Given I am on the groups individual page
-  When I click on a students name
-  Then I should go to that students profile page
+# Scenario: I am able to click on a group
+#
+#   Given I am on the Homepage
+#   When I click on a group
+#   Then I should be redirected to the individual page for that group
+#
+# Scenario: I am able to click on students name
+#
+#   Given I am on the groups individual page
+#   When I click on a students name
+#   Then I should go to that students profile page

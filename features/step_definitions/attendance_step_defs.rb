@@ -31,10 +31,18 @@ When("choose an invalid date before the start date") do
   attendance_form_page.select_date "29-08-2003"
 end
 
+When("choose an invalid date after the end date") do
+  attendance_form_page.select_date "29-08-2019"
+end
+
 When("click next") do
   attendance_form_page.click_next
 end
 
-Then("I shouldn't be able to add attendance for that date") do
-  expect(current_url).to_not eq "http://localhost:3000/attendances/new?group=1&date=2003-08-29"
+Then("I shouldn't be able to add attendance for date in {int}") do |int|
+  if int == 2003
+    expect(current_url).to_not eq "http://localhost:3000/attendances/new?group=1&date=2003-08-29"
+  else
+    expect(current_url).to_not eq "http://localhost:3000/attendances/new?group=1&date=2019-08-29"
+  end
 end
