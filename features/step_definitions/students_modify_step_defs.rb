@@ -70,36 +70,12 @@ Then("they are inactive") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("I input an invalid @tom") do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I input an invalid (.*)$/) do |name|
+  pending
 end
 
-Then("I should be presented with an Name cannot contain illegal characters") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("I input an invalid B{int}kang") do |int|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("I should be presented with an Name cannot contain numerical characters") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("I input an invalid $arun") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("I should be presented with an Name must be {int}{int} characters") do |int, int2|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("I input an invalid {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("I should be presented with an Name Must Be Given") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should be presented with (.*)$/) do |error|
+  pending
 end
 
 Given("I am on a student’s edit page") do

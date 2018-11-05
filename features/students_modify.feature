@@ -42,7 +42,7 @@ Feature: Modifying a Student
   Scenario Outline: I can't input an invalid students name
   Given I am on a new student page
   When I input an invalid <name>
-  Then I should be presented with an <error>
+  Then I should be presented with <error>
 
     Examples:
     | name | error |
@@ -64,7 +64,7 @@ Feature: Modifying a Student
   Scenario Outline: I can edit a student's details
   Given I am on a student’s edit page
   When I input an invalid <name>
-  Then I should be presented with an <error>
+  Then I should be presented with <error>
 
     Examples:
     | name | error |
