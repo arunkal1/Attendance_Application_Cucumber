@@ -9,6 +9,7 @@ Feature: Groups resource
     When I click on an individual group
     Then I should be redirected to that group's page
 
+  @edit_group
   Scenario: Inverting the active status
     Given I'm editting a group
     When I press active

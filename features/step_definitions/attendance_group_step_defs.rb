@@ -16,11 +16,12 @@ Then("I should be redirected to that group's page") do
 end
 
 Given("I'm editting a group") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @active = group_page.group_is_active?
+  group_page.edit_group
 end
 
 When("I press active") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_page.toggle_active
 end
 
 When("I press update") do
