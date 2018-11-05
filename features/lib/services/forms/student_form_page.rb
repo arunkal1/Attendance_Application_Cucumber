@@ -25,7 +25,7 @@ class StudentFormPage
   end
 
   def error_message
-    find(:xpath, ERROR_TEXT_XPATH)
+    find(:xpath, ERROR_TEXT_XPATH).text
   end
 
 
