@@ -114,11 +114,11 @@ Then("will no longer be visible on the groups page") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("I click the appropriate button to arrange the groups by either active status\/id\/name") do
+When("I click the appropriate button to arrange the groups by either active status or id or name") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then("the students should be arranged correctly by the active status\/id\/name") do
+Then("the students should be arranged correctly by the active status or id or name") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 

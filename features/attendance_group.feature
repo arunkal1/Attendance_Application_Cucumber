@@ -5,7 +5,7 @@ Feature: Groups resource
 
 
   Scenario: I should be able to view individual groups
-    Given I'm on the home page
+    Given I'm on the homepage
     When I click on an individual group
     Then I should be redirected to that group's page
 
@@ -30,7 +30,7 @@ Feature: Groups resource
 
 
     Scenario: Navigating to the form
-      Given I'm on the home page
+      Given I'm on the homepage
       When I click add new group
       Then  I should be redirected to the add new group form
 
@@ -70,9 +70,9 @@ Feature: Groups resource
 
 
     Scenario: status, id and name
-      Given I'm on the home page
-      When I click the appropriate button to arrange the groups by either active status/id/name
-      Then the students should be arranged correctly by the active status/id/name
+      Given I'm on the homepage
+      When I click the appropriate button to arrange the groups by either active status or id or name
+      Then the students should be arranged correctly by the active status or id or name
 
 
 
