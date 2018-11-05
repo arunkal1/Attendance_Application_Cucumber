@@ -7,9 +7,13 @@ include Capybara::DSL
     visit("attendances")
   end
 
-  def select_group
+  def select_group string
     within '#myForm' do
-      find("option[value='1']").click
+      if string == "Eng-01"
+        find("option[value='1']").click
+      elsif string == "Eng-11"
+        find("option[value='4']").click
+      end
     end
   end
 
