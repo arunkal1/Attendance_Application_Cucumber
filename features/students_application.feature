@@ -6,7 +6,7 @@ Feature: Student's Application
     Given I am on the students page OR a groups page
     When I click on a student
     Then I should be taken to the individual student page
-    And I should be presented with information on the student
+    And I should be able to see information on the student
 
   Scenario: I want to view a list of students
     Given I am on a page

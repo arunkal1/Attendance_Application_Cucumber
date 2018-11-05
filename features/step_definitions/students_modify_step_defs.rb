@@ -1,7 +1,3 @@
-Given("I am on a page") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 When("I click on the add student link") do
   student_page.select_new_student
 end
