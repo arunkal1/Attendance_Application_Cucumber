@@ -1,5 +1,6 @@
 Given("I'm on the homepage") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_page.visit_home_page
+  sleep 2
 end
 
 Then("I should be able to see the groups") do
