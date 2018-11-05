@@ -18,6 +18,15 @@ include Capybara::DSL
     click_link("#{name}")
   end
 
+  def search_student_by_id id
+    all(:css, '.sorting_1').each do |person|
+      if person.text == id
+        return false
+      end
+    end
+    true
+  end
+
   # Checks if it takes you to that student's page
   def is_profile
     if find(:css, '.show-profile').visible?
@@ -47,5 +56,7 @@ include Capybara::DSL
   def select_new_student
     click_link('Create a new student')
   end
+
+
 
 end

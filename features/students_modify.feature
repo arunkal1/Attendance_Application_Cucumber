@@ -1,7 +1,7 @@
 Feature: Modifying a Student
 
   # ================ Happy Path Start ================
-  @testing
+
   Scenario: I want to add a student
     Given I am on a page
     When I click on the add student link
@@ -15,18 +15,18 @@ Feature: Modifying a Student
   Scenario: I want to delete a student from the group
     Given I am on a student’s page
     When I click on the delete student button
-    Then the student should be removed from the group
-    And the student should be removed from the database
+    Then the student should be removed from the database
+
   # ================ Happy Path End ================
   # ================ Creating a new student ===============
+
   Scenario: I can input vaid details and a new active student is created
     Given I am on a new student page
     When I input a valid name
     And I select a group
     And I check the active group box
     And I click submit
-    Then the new student is added
-    And they are active
+    Then they are active
     And I am redirected to the student's page
     And a notice appears to advise the student has been created
 
@@ -36,8 +36,7 @@ Feature: Modifying a Student
     When I input a valid name
     And I select a group
     And I click submit
-    Then the new student is added
-    And they are inactive
+    Then they are inactive
     And I am redirected to the student's page
     And a notice appears to advise the student has been created
   # ================ Invalid Student ===============
@@ -55,13 +54,13 @@ Feature: Modifying a Student
     | $arun | Name must be 4-12 characters |
     |  | Name Must Be Given |
 
+  @testing
   Scenario: I can edit a student's details
     Given I am on a student’s edit page
     When I input a valid name
     And I select a group
     And I click submit
-    Then the student is updated
-    And I am redirected to the student's page
+    Then I am redirected to the student's page
     And a notice appears to advise the student has been updated
 
   # ================ Invalid Student ===============

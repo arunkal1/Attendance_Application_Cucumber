@@ -7,7 +7,8 @@ Then("I should be taken the add student form") do
 end
 
 Given("I am on a student’s page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit('http://localhost:3000/students')
+  student_page.click_student "Arun"
 end
 
 When("I click on the edit student button") do
@@ -15,19 +16,16 @@ When("I click on the edit student button") do
 end
 
 Then("I should be taken the edit student form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(current_url).to eq 'http://localhost:3000/students/6/edit'
 end
 
 When("I click on the delete student button") do
   ind_student_page.delete_student
 end
 
-Then("the student should be removed from the group") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
 
 Then("the student should be removed from the database") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit('http://localhost:3000/students')
 end
 
 Given("I am on a new student page") do
@@ -51,24 +49,20 @@ When("I click submit") do
   student_form_page.click_submit
 end
 
-Then("the new student is added") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Then("they are active") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(ind_student_page.check_active).to eq "Active"
 end
 
 Then("I am redirected to the student's page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(ind_student_page.check_name).to eq 'Dan'
 end
 
 Then("a notice appears to advise the student has been created") do
-  pending # Write code here that turns the phrase above into concrete actions
+  ind_student_page.check_notice
 end
 
 Then("they are inactive") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(ind_student_page.check_active).to eq 'Inactive'
 end
 
 When(/^I input an invalid (.*)$/) do |name|
@@ -80,13 +74,12 @@ Then(/^I should be presented with (.*)$/) do |error|
 end
 
 Given("I am on a student’s edit page") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("the student is updated") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit('http://localhost:3000/students')
+  student_page.click_student "Arun"
+  ind_student_page.edit_student
+  expect(current_url).to eq 'http://localhost:3000/students/6/edit'
 end
 
 Then("a notice appears to advise the student has been updated") do
-  pending # Write code here that turns the phrase above into concrete actions
+  ind_student_page.check_notice
 end

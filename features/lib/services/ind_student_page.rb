@@ -27,4 +27,8 @@ class IndStudentPage
     find(:xpath, '/html/body/div[2]/div[1]/div[2]/table/tbody/tr[3]/td[2]/h1/span').text
   end
 
+  def check_notice
+    find(:css, '.notice').visible?
+  end
+
 end
