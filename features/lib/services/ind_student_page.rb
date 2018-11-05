@@ -20,7 +20,12 @@ include Capybara::DSL
   end
 
   def find_today
-    
+
   end
+
+  def visit_individual_student_page
+  visit('http://localhost:3000/students/1')
+  end
+
 
 end
