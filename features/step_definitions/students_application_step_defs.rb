@@ -12,7 +12,7 @@ Then("I should be taken to the individual student page") do
   expect(student_page.is_profile).to be true
 end
 
-Then("I should be presented with information on the student") do
+Then("I should be able to see information on the student") do
   expect(student_page.student_information).to be true
 end
 

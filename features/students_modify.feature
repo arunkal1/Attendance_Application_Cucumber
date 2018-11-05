@@ -1,6 +1,7 @@
 Feature: Modifying a Student
 
   # ================ Happy Path Start ================
+  @testing
   Scenario: I want to add a student
     Given I am on a page
     When I click on the add student link
