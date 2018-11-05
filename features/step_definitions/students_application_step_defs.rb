@@ -1,16 +1,9 @@
 Given("I am on the students page OR a groups page") do
   student_page.visit_students
-  sleep 1
-  student_page.click_student "Dan"
-  sleep 1
-  student_page.visit_students
-  sleep 1
-  student_page.select_new_student
-  sleep 2
 end
 
 When("I click on a student") do
-  pending # Write code here that turns the phrase above into concrete actions
+  student_page.click_student "Dan"
 end
 
 Then("I should be taken to the individual student page") do

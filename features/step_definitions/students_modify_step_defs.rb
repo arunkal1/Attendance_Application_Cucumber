@@ -3,11 +3,11 @@ Given("I am on a page") do
 end
 
 When("I click on the add student link") do
-  pending # Write code here that turns the phrase above into concrete actions
+  student_page.select_new_student
 end
 
 Then("I should be taken the add student form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(current_url).to eq 'localhost:3000/students/new'
 end
 
 Given("I am on a student’s page") do
@@ -35,23 +35,23 @@ Then("the student should be removed from the database") do
 end
 
 Given("I am on a new student page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit('localhost:3000/students/new')
 end
 
 When("I input a valid name") do
-  pending # Write code here that turns the phrase above into concrete actions
+  student_form_page.input_name 'Dan'
 end
 
 When("I select a group") do
-  pending # Write code here that turns the phrase above into concrete actions
+  student_form_page.select_group '8 - BA-07'
 end
 
 When("I check the active group box") do
-  pending # Write code here that turns the phrase above into concrete actions
+  student_form_page.click_active
 end
 
 When("I click submit") do
-  pending # Write code here that turns the phrase above into concrete actions
+  student_form_page.click_submit
 end
 
 Then("the new student is added") do
@@ -75,7 +75,7 @@ Then("they are inactive") do
 end
 
 When(/^I input an invalid (.*)$/) do |name|
-  pending
+  student_form_page.input_name name
 end
 
 Then(/^I should be presented with (.*)$/) do |error|

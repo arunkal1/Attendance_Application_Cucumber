@@ -29,6 +29,7 @@ Feature: Modifying a Student
     And I am redirected to the student's page
     And a notice appears to advise the student has been created
 
+  @input_name
   Scenario: I can input vaid details and a new inactive student is created
     Given I am on a new student page
     When I input a valid name
