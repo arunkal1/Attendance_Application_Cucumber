@@ -31,5 +31,5 @@ Then("I should be taken to the students page") do
 end
 
 Then("I should see a list of students") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(student_page.shows_all_students).to be true
 end
