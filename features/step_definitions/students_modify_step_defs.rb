@@ -11,7 +11,7 @@ Given("I am on a student’s page") do
 end
 
 When("I click on the edit student button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  ind_student_page.edit_student
 end
 
 Then("I should be taken the edit student form") do
@@ -19,7 +19,7 @@ Then("I should be taken the edit student form") do
 end
 
 When("I click on the delete student button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  ind_student_page.delete_student
 end
 
 Then("the student should be removed from the group") do
