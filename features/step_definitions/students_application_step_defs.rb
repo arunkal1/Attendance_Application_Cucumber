@@ -1,5 +1,6 @@
 Given("I am on the students page OR a groups page") do
   student_page.visit_students
+  sleep 10
 end
 
 When("I click on a student") do
