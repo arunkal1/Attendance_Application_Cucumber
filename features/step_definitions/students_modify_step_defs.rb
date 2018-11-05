@@ -1,9 +1,9 @@
 When("I click on the add student link") do
-
+  click_add_new_student
 end
 
 Then("I should be taken the add student form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(current_url).to eq 'http://localhost:3000/students/new'
 end
 
 Given("I am on a student’s page") do
