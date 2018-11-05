@@ -75,7 +75,7 @@ When(/^I input an invalid (.*)$/) do |name|
 end
 
 Then(/^I should be presented with (.*)$/) do |error|
-  pending
+  expect(student_form_page.error_message).to eq error
 end
 
 Given("I am on a student’s edit page") do

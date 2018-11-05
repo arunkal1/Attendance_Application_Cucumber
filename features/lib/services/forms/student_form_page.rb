@@ -6,6 +6,7 @@ class StudentFormPage
   STUDENT_NAME_FIELD_ID = 'student_name'
   STUDENT_ACTIVE_ID = 'student_active'
   GROUP_OPTION_ID = 'student_group_id'
+  ERROR_TEXT_XPATH = '//*[@id="new_student"]/center/div/ul/li/p'
 
   def input_name name
     fill_in(STUDENT_NAME_FIELD_ID, with: name)
@@ -21,6 +22,10 @@ class StudentFormPage
 
   def click_submit
     click_button('Submit')
+  end
+
+  def error_message
+    find(:xpath, ERROR_TEXT_XPATH)
   end
 
 

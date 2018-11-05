@@ -41,9 +41,11 @@ Feature: Modifying a Student
     And I am redirected to the student's page
     And a notice appears to advise the student has been created
   # ================ Invalid Student ===============
+  @invalid_student
   Scenario Outline: I can't input an invalid students name
   Given I am on a new student page
   When I input an invalid <name>
+  And I click submit
   Then I should be presented with <error>
 
     Examples:
@@ -51,7 +53,7 @@ Feature: Modifying a Student
     | @tom | Name cannot contain illegal characters |
     | B4kang | Name cannot contain numerical characters |
     | $arun | Name must be 4-12 characters |
-    | "" | Name Must Be Given |
+    |  | Name Must Be Given |
 
   Scenario: I can edit a student's details
     Given I am on a student’s edit page
@@ -73,4 +75,4 @@ Feature: Modifying a Student
     | @tom | Name cannot contain illegal characters |
     | B4kang | Name cannot contain numerical characters |
     | $arun | Name must be 4-12 characters |
-    | "" | Name Must Be Given |
+    |  | Name Must Be Given |
