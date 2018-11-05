@@ -1,5 +1,9 @@
-When("I click on the add student link") do
+Given("I am on a page") do
   pending # Write code here that turns the phrase above into concrete actions
+end
+
+When("I click on the add student link") do
+    pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then("I should be taken the add student form") do

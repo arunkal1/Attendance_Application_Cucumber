@@ -1,5 +1,5 @@
 Given("I am on the students page OR a groups page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  student_page.visit_students
 end
 
 When("I click on a student") do
