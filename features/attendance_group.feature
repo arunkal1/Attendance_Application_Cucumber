@@ -1,15 +1,15 @@
-Feature: List of groups
+Feature: Groups resource
   Scenario: If I'm on the groups page, I should be able to see the groups
     Given I'm on the homepage
     Then I should be able to see the groups
 
-Feature: Individual Group
+
   Scenario: I should be able to view individual groups
     Given I'm on the home page
     When I click on an individual group
     Then I should be redirected to that group's page
 
-Feature: Edit Group
+
   Scenario: Inverting the active status
     Given I'm editting a group
     When I press active
@@ -27,7 +27,8 @@ Feature: Edit Group
     Then the group should be updated
     And a success message displayed
 
-  Feature: Adding groups
+
+
     Scenario: Navigating to the form
       Given I'm on the home page
       When I click add new group
@@ -58,20 +59,23 @@ Feature: Edit Group
       And a success message displayed
       And the group should be shown as active on the home page
 
-  Feature: Deleting groups
+
+
     Scenario: Deleting an individual group
       Given that I am viewing an individual group
       When I click delete group
       Then that group will be deleted
       And will no longer be visible on the groups page
 
-  Feature: Sorting groups
+
+
     Scenario: status, id and name
-      Given I am on the home page
+      Given I'm on the home page
       When I click the appropriate button to arrange the groups by either active status/id/name
       Then the students should be arranged correctly by the active status/id/name
 
-  Feature: Viewing students in a group
+
+
     Scenario: There are students
       Given I am on an individual group page
       When There are students in the group
