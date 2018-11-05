@@ -1,6 +1,7 @@
 Feature: Student's Application
 
   # ================ Happy Path Start ================
+  @test
   Scenario: I want to view each student
     Given I am on the students page OR a groups page
     When I click on a student
