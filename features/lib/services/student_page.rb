@@ -32,6 +32,12 @@ include Capybara::DSL
     end
   end
 
+  def shows_all_students
+    if find(:xpath, '//*[@id="studentslist"]/thead/tr/th[2]').visible?
+      true
+    end
+  end
+
   # Takes you to the add new student form
   def click_add_new_student
     click_link('Add New Students')
