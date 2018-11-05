@@ -1,9 +1,9 @@
 When("I click on the add student link") do
-  student_page.select_new_student
+  click_add_new_student
 end
 
 Then("I should be taken the add student form") do
-  expect(current_url).to eq 'localhost:3000/students/new'
+  expect(current_url).to eq 'http://localhost:3000/students/new'
 end
 
 Given("I am on a student’s page") do
