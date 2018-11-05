@@ -40,7 +40,7 @@ include Capybara::DSL
 
   # Takes you to the add new student form
   def click_add_new_student
-    click_link('Add New Students')
+    click_link('Add New Student')
   end
 
   # Clicks the button to create a new student

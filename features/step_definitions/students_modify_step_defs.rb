@@ -31,6 +31,7 @@ Then("the student should be removed from the database") do
 end
 
 Given("I am on a new student page") do
+  student_page.visit_homepage
   student_page.click_add_new_student
 end
 
