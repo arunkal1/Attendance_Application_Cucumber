@@ -17,6 +17,7 @@ end
 
 Given("I'm editting a group") do
   @active = group_page.group_is_active?
+  @a_pre_info = group_page.get_group_info
   group_page.edit_group
 end
 
@@ -25,15 +26,18 @@ When("I press active") do
 end
 
 When("I press update") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_page.click_update
 end
 
 Then("It should invert the active status") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(group_page.group_is_active?).to_not eq @active
 end
 
 Then("nothing will be updated") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @a_post_info = group_page.get_group_info
+  for i in (0..(@a_pre_info.length - 1)) do
+    expect(@a_pre_info[i]).to eq @a_post_info[i]
+  end
 end
 
 When("I make a change to a field") do

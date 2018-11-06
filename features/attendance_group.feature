@@ -16,6 +16,7 @@ Feature: Groups resource
     And I press update
     Then It should invert the active status
 
+  @edit_group
   Scenario: Updating the group without changing anything
     Given I'm editting a group
     When I press update
