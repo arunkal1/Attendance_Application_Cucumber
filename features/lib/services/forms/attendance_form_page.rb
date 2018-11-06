@@ -10,9 +10,9 @@ include Capybara::DSL
   def select_group string
     within '#myForm' do
       if string == "Eng-01"
-        find("option[value='1']").click
+        select "Eng-01", :from => "group"
       elsif string == "Eng-11"
-        find("option[value='4']").click
+        select "Eng-11", :from => "group"
       end
     end
   end
@@ -35,8 +35,8 @@ include Capybara::DSL
     click_button("Create Attendance")
   end
 
-  def get_group_name
-    find_link('Eng-01').visible?
+  def get_group_name group_name
+    find_link(group_name).visible?
   end
 
 end

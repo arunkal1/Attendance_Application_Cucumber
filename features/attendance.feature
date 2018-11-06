@@ -14,14 +14,14 @@ Given I am on the Attendance form page
 When I pick group "Eng-01"
 And choose an invalid date before the start date
 And click next
-Then I shouldn't be able to add attendance for date in 2003
+Then I shouldn't be able to add attendance for date in "2003-08-29"
 
 Scenario: I want to check if I'm not able to add attendance for a date after the group's given end date
 Given I am on the Attendance form page
 When I pick group "Eng-01"
 And choose an invalid date after the end date
 And click next
-Then I shouldn't be able to add attendance for date in 2019
+Then I shouldn't be able to add attendance for date in "2019-08-29"
 
 Scenario: I want to make sure I can't add an attendance for an empty student
 Given I am on the Attendance form page
@@ -30,6 +30,13 @@ And choose a valid date
 And click next
 Then I shouldn't add attendance
 
+# This scenario is ran after the first scenario, since otherwise there would be no attendance for the date inputted.
+Scenario: I want to make sure I can't add an attendance for a date where attendance has already been added
+Given I am on the Attendance form page
+When I pick group "Eng-01"
+And choose a valid date
+And click next
+Then I shouldn't add attendance
 
 Scenario: I am able to click on a group
 

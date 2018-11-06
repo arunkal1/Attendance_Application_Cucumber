@@ -63,7 +63,7 @@ When("choose a valid date") do
 end
 
 When("add a type of Attendance and comment for each student in the list") do
-  expect(attendance_form_page.get_group_name).to eq true
+  expect(attendance_form_page.get_group_name "Eng-01").to eq true
   attendance_form_page.add_attendance 1, "Comment"
   attendance_form_page.add_attendance 2, ""
   attendance_form_page.add_attendance 3, ""
@@ -90,8 +90,8 @@ When("click next") do
   attendance_form_page.click_next
 end
 
-Then("I shouldn't be able to add attendance for date in {int}") do |int|
-  if int == 2003
+Then("I shouldn't be able to add attendance for date in {string}") do |string|
+  if string == "2003-08-29"
     expect(current_url).to_not eq "http://localhost:3000/attendances/new?group=1&date=2003-08-29"
   else
     expect(current_url).to_not eq "http://localhost:3000/attendances/new?group=1&date=2019-08-29"
