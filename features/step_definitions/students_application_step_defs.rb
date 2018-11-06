@@ -33,3 +33,16 @@ end
 Then("I should see a list of students") do
   expect(student_page.shows_all_students).to be true
 end
+
+Given("I am on the students page") do
+  student_page.visit_students
+  expect(student_page.current_url).to eq 'http://localhost:3000/students'
+end
+
+When("I type a students name in the search bar") do
+  student_page.search_student "Arun"
+end
+
+Then("I am presented with a list of students that match that name") do
+  expect(student_page.shows_all_students).to be true
+end
