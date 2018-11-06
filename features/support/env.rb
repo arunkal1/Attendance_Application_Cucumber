@@ -8,10 +8,10 @@ end
 
 Capybara.configure do |config|
   config.ignore_hidden_elements = false
-  config.default_max_wait_time= 10
+  config.default_max_wait_time= 2
   config.match = :prefer_exact
   config.default_driver = :chrome
-  config.app_host = 'http://localhost:3000/'
+  config.app_host = 'localhost:3000'
 end
 
 # Sets up the module from super class- Means we dont have

@@ -36,4 +36,8 @@ module AttendanceApplication
     StudentFormPage.new
   end
 
+  def click_add_new_student
+    click_link('Add New Student')
+  end
+
 end
