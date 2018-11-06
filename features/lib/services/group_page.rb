@@ -23,6 +23,7 @@ class GroupPage
 
   def edit_group
     click_on("Edit Group")
+    sleep 2
   end
 
   def toggle_active
@@ -49,31 +50,34 @@ class GroupPage
     return [group_title.text, a_list_items[5].text, a_list_items[6].text, a_list_items[8].text]
   end
 
-  def get_group_name
-    # find("h1", text: /^Attendance for: .*$/) do |text|
-    #   puts text.text
-    # end
-    # return text
+  def edit_group_name
+    fill_in("group_name", with: "Flubbs")
   end
 
-  def get_group_start_date
-    # find(:text, /^Start date: .*$/) do |text|
-    #   puts text
-    # end
-    # return text
+  def edit_group_stream
+    fill_in("group_stream", with: "LowFlow")
   end
 
-  def get_group_end_date
-    # find(:text, /^End date: .*$/) do |text|
-    #   puts text
-    # end
-    # return text
+  def edit_group_startdate
+    fill_in("group_startdate", with: "22/07/2018")
   end
 
-  def get_group_stream
-    # find(:text, /^Stream: .*$/) do |text|
-    #   puts text
-    # end
-    # return text
+  def edit_group_enddate
+    fill_in("group_enddate", with: "18/12/2018")
+  end
+
+  def change_fields
+    edit_group_name
+    edit_group_stream
+    edit_group_startdate
+    edit_group_enddate
+  end
+
+  def alert_notice_exists?
+    if has_css?(".alert")
+      return true
+    else
+      return false
+    end
   end
 end

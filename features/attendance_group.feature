@@ -22,9 +22,11 @@ Feature: Groups resource
     When I press update
     Then nothing will be updated
 
+  @edit_group
   Scenario: Changing a field
     Given I'm editting a group
     When I make a change to a field
+    And I press update
     Then the group should be updated
     And a success message displayed
 

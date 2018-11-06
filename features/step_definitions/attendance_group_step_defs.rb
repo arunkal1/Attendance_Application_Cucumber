@@ -41,15 +41,18 @@ Then("nothing will be updated") do
 end
 
 When("I make a change to a field") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_page.change_fields
 end
 
 Then("the group should be updated") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @a_post_info = group_page.get_group_info
+  for i in (0..(@a_pre_info.length - 1)) do
+    expect(@a_pre_info[i]).to_not eq @a_post_info[i]
+  end
 end
 
 Then("a success message displayed") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(group_page.alert_notice_exists?).to eq true
 end
 
 When("I click add new group") do
