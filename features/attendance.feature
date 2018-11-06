@@ -1,6 +1,7 @@
 Feature: Attendance
 
 Attendance Form
+@attendance_form
 Scenario: If I want to the check if I can correctly add attendance for a group
 Given I am on the Attendance form page
 When I pick group "Eng-01"
@@ -9,6 +10,7 @@ And click next
 And add a type of Attendance and comment for each student in the list
 Then I should go back to the Homepage
 
+@attendance_form
 Scenario: I want to check if I'm not able to add attendance for a date before the group's given start date
 Given I am on the Attendance form page
 When I pick group "Eng-01"
@@ -16,6 +18,7 @@ And choose an invalid date before the start date
 And click next
 Then I shouldn't be able to add attendance for date in "2003-08-29"
 
+@attendance_form
 Scenario: I want to check if I'm not able to add attendance for a date after the group's given end date
 Given I am on the Attendance form page
 When I pick group "Eng-01"
@@ -23,6 +26,7 @@ And choose an invalid date after the end date
 And click next
 Then I shouldn't be able to add attendance for date in "2019-08-29"
 
+@attendance_form
 Scenario: I want to make sure I can't add an attendance for an empty student
 Given I am on the Attendance form page
 When I pick group "Eng-11"
@@ -30,6 +34,7 @@ And choose a valid date
 And click next
 Then I shouldn't add attendance
 
+@attendance_form
 Scenario: I want to check that I can't add attendance for a group without selecting the date
 Given I am on the Attendance form page
 When I pick group "Eng-01"
@@ -38,6 +43,7 @@ And click next
 Then I shouldn't add attendance
 
 # This scenario is ran after the first scenario, since otherwise there would be no attendance for the date inputted.
+@attendance_form
 Scenario: I want to make sure I can't add an attendance for a date where attendance has already been added
 Given I am on the Attendance form page
 When I pick group "Eng-01"
