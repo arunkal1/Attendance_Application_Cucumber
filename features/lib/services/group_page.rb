@@ -11,4 +11,22 @@ def click_robin
   click_link('Robin')
 end
 
+def click_arrow_up
+  find(:css, 'th.sorting_asc').click
+end
+
+def get_name_column
+  @names_array = []
+  all('.sorting_1').each do |a|
+    @names_array.push a.text
+  end
+
+  # @names_array.sort
+  p @names_array
+  # values = ['pinda', 'elisha', 'michael']
+  #
+  # copy = values.sort
+  # puts copy.to_s
+end
+
 end
