@@ -4,7 +4,7 @@ class AttendanceFormPage
 include Capybara::DSL
 
   def visit_attendance_form_page
-    visit("attendances")
+    visit("/attendances")
   end
 
   def select_group string

@@ -36,7 +36,7 @@ Feature: Attendance
 #   When I click on a students name
 #   Then I should go to that students profile page
 
-Attendance Form
+# Attendance Form
 @attendance_form
 Scenario: If I want to the check if I can correctly add attendance for a group
 Given I am on the Attendance form page

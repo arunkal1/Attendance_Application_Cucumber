@@ -52,7 +52,7 @@ end
 
 Then("I should return to the home page") do
   pending # Write code here that turns the phrase above into concrete actions
-
+end
 
 # Michaels Code
 Given("I am on the Attendance form page") do
