@@ -13,4 +13,9 @@ Feature: Student's Application
     When I click the students link
     Then I should be taken to the students page
     And I should see a list of students
+
+  Scenario: I want to be able to search for a student
+    Given I am on the students page
+    When I type a students name in the search bar
+    Then I am presented with a list of students that match that name
   # ================ Happy Path End ================
