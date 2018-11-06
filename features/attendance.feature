@@ -30,6 +30,14 @@ And choose a valid date
 And click next
 Then I shouldn't add attendance
 
+Scenario: I want to check that I can't add attendance for a group without selecting the date
+Given I am on the Attendance form page
+When I pick group "Eng-01"
+And give a blank input for the date
+And click next
+Then I shouldn't add attendance
+
+
 # This scenario is ran after the first scenario, since otherwise there would be no attendance for the date inputted.
 Scenario: I want to make sure I can't add an attendance for a date where attendance has already been added
 Given I am on the Attendance form page

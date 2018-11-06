@@ -58,6 +58,10 @@ When("I pick group {string}") do |string|
   attendance_form_page.select_group string
 end
 
+When("give a blank input for the date") do
+  attendance_form_page.select_date ""
+end
+
 When("choose a valid date") do
   attendance_form_page.select_date "29-08-2018"
 end
