@@ -80,4 +80,11 @@ class GroupPage
       return false
     end
   end
+
+  def add_group_success_message
+    within(:css, ".alert-success") do
+      find(:css, ".alert").text
+    end 
+  end
+
 end
