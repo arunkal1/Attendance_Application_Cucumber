@@ -28,35 +28,40 @@ Feature: Groups resource
     And a success message displayed
 
 
+    # @add_group
+    # Scenario: Navigating to the form
+    #   Given I'm on the homepage
+    #   When I click add new group
+    #   Then  I should be redirected to the add new group form
 
-    Scenario: Navigating to the form
-      Given I'm on the homepage
-      When I click add new group
-      Then  I should be redirected to the add new group form
+    # @add_group
+    # Scenario: Adding a group with no inputs
+    #   Given I'm on the add new group form
+    #   When I press the add new group form
+    #   Then five errors to fix message should be displayed
 
-    Scenario: Adding a group with no inputs
-      Given I'm on the add new group form
-      When I press the add new group form
-      Then five errors to fix message should be displayed
+    # @add_group
+    # Scenario: Adding a group with valid inputs and not touching active
+    #   Given I'm on the add new group form
+    #   When I add a name to the name field
+    #   And add a stream to the stream field
+    #   And I add a valid start date
+    #   And a valid end date
+    #   And I press the add new group form
+    #   Then a success message displayed
+    #   And the group should be created
 
-    Scenario: Adding a group with valid inputs and not touching active
-      Given I'm on the add new group from
-      When I add a name to the name field
-      And add a stream to the stream field
-      And I add a valid start date
-      And a valid end date
-      Then the group should be created
-      And a success message displayed
-
+    @add_group
     Scenario: Adding a group with valid inputs and setting the group as active
-      Given I'm on the add new group from
+      Given I'm on the add new group form
       When I add a name to the name field
       And add a stream to the stream field
       And I add a valid start date
       And a valid end date
       And set the group as active
-      Then the group should be created
-      And a success message displayed
+      And I press the add new group form
+      Then a success message displayed
+      And the group should be created
       And the group should be shown as active on the home page
 
 

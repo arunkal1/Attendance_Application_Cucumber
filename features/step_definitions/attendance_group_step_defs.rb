@@ -1,6 +1,5 @@
 Given("I'm on the homepage") do
   group_page.visit_home_page
-  sleep 2
 end
 
 Then("I should be able to see the groups") do
@@ -44,59 +43,72 @@ Then("the group should be updated") do
 end
 
 Then("a success message displayed") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(group_page.add_group_success_message).to eq "Eng-99 was created"
 end
 
 When("I click add new group") do
-  pending # Write code here that turns the phrase above into concrete actions
+  homepage.click_add_group
 end
 
 Then("I should be redirected to the add new group form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(current_url).to eq 'http://localhost:3000/groups/new'
 end
 
 Given("I'm on the add new group form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_page.visit_home_page
+  # count the initial number of groups, both active and inactive, on the attendance application
+  @start_group_count = homepage.number_of_groups
+  sleep 1
+  homepage.click_add_group
+  sleep 1
+  expect(current_url).to eq 'http://localhost:3000/groups/new'
 end
 
 When("I press the add new group form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_form_page.submit_new_group
+  sleep 1
 end
 
 Then("five errors to fix message should be displayed") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(group_form_page.error_num).to eq "5 errors To Fix"
 end
 
-Given("I'm on the add new group from") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
 
 When("I add a name to the name field") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_form_page.input_name("Eng-99")
+  sleep 1
 end
 
 When("add a stream to the stream field") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_form_page.input_stream("SDET")
+  sleep 1
 end
 
 When("I add a valid start date") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_form_page.input_start_date("27082018")
+  sleep 1
 end
 
 When("a valid end date") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_form_page.input_end_date("23112018")
+  sleep 1
 end
 
 Then("the group should be created") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_page.visit_home_page
+  @end_group_count = homepage.number_of_groups
+  expect(@end_group_count - @start_group_count).to eq 1
+  expect(homepage.group_names).to eq "Eng-99"
+  sleep 1
 end
 
 When("set the group as active") do
-  pending # Write code here that turns the phrase above into concrete actions
+  group_form_page.select_group_active
+  expect(group_form_page.active_button_selected?).to be true
 end
 
 Then("the group should be shown as active on the home page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(homepage.group_active?).to be true
 end
 
 Given("that I am viewing an individual group") do
