@@ -12,12 +12,12 @@ def click_robin
 end
 
 def click_arrow_up
-  find(:css, 'th.sorting_asc').click
+  find(:css, 'th.sorting').click
 end
 
 def get_name_column
   @names_array = []
-  all('.sorting_1').each do |a|
+  all('td a').each do |a|
     @names_array.push a.text
   end
 

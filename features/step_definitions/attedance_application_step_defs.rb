@@ -41,4 +41,5 @@ end
 
 Then("I should be able to view the table with students ordered in assendening order") do
     group_page.get_name_column
+    sleep 10
 end
