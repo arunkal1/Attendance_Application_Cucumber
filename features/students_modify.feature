@@ -1,23 +1,6 @@
 Feature: Modifying a Student
 
-  # ================ Happy Path Start ================
 
-  Scenario: I want to add a student
-    Given I am on a page
-    When I click on the add student link
-    Then I should be taken the add student form
-
-  Scenario: I want to edit a student
-    Given I am on a student’s page
-    When I click on the edit student button
-    Then I should be taken the edit student form
-
-  Scenario: I want to delete a student from the group
-    Given I am on a student’s page
-    When I click on the delete student button
-    Then the student should be removed from the database
-
-  # ================ Happy Path End ================
   # ================ Creating a new student ===============
 
   Scenario: I can input vaid details and a new active student is created
@@ -42,10 +25,10 @@ Feature: Modifying a Student
   # ================ Invalid Student ===============
   @invalid_student
   Scenario Outline: I can't input an invalid students name
-  Given I am on a new student page
-  When I input an invalid <name>
-  And I click submit
-  Then I should be presented with <error>
+    Given I am on a new student page
+    When I input an invalid <name>
+    And I click submit
+    Then I should be presented with <error>
 
     Examples:
     | name | error |
@@ -67,7 +50,8 @@ Feature: Modifying a Student
   Scenario Outline: I can edit a student's details
   Given I am on a student’s edit page
   When I input an invalid <name>
-  Then I should be presented with <error>
+  And I click submit
+  Then The error message should be <error>
 
     Examples:
     | name | error |
@@ -75,3 +59,21 @@ Feature: Modifying a Student
     | B4kang | Name cannot contain numerical characters |
     | $arun | Name must be 4-12 characters |
     |  | Name Must Be Given |
+
+    # ================ Happy Path Start ================
+
+    Scenario: I want to add a student
+    Given I am on a page
+    When I click on the add student link
+    Then I should be taken the add student form
+
+    Scenario: I want to edit a student
+    Given I am on a student’s page
+    When I click on the edit student button
+    Then I should be taken the edit student form
+
+    Scenario: I want to delete a student from the group
+    Given I am on a student’s page
+    When I click on the delete student button
+    Then the student should be removed from the database
+    # ================ Happy Path End ================

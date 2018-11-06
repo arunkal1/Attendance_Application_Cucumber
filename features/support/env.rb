@@ -8,7 +8,7 @@ end
 
 Capybara.configure do |config|
   config.ignore_hidden_elements = false
-  config.default_max_wait_time= 10
+  config.default_max_wait_time= 2
   config.match = :prefer_exact
   config.default_driver = :chrome
   config.app_host = 'localhost:3000'

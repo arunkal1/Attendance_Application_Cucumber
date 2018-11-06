@@ -8,7 +8,7 @@ end
 
 Given("I am on a student’s page") do
   visit('http://localhost:3000/students')
-  student_page.click_student "Arun"
+  student_page.click_student "Steve"
 end
 
 When("I click on the edit student button") do
@@ -16,7 +16,7 @@ When("I click on the edit student button") do
 end
 
 Then("I should be taken the edit student form") do
-  expect(current_url).to eq 'http://localhost:3000/students/6/edit'
+  expect(current_url).to eq 'http://localhost:3000/students/10/edit'
 end
 
 When("I click on the delete student button") do
@@ -73,11 +73,13 @@ Then(/^I should be presented with (.*)$/) do |error|
   expect(student_form_page.error_message).to eq error
 end
 
+Then(/^The error message should be (.*)$/) do |error|
+  expect(student_form_page.error_message_edit).to eq error
+end
+
 Given("I am on a student’s edit page") do
-  visit('http://localhost:3000/students')
-  student_page.click_student "Arun"
-  ind_student_page.edit_student
-  expect(current_url).to eq 'http://localhost:3000/students/6/edit'
+  visit('http://localhost:3000/students/1/edit')
+  expect(current_url).to eq 'http://localhost:3000/students/1/edit'
 end
 
 Then("a notice appears to advise the student has been updated") do

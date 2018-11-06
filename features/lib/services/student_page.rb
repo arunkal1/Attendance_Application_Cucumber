@@ -57,6 +57,10 @@ include Capybara::DSL
     click_link('Create a new student')
   end
 
+  def search_student name
+    find(:xpath, '//*[@id="studentslist_filter"]/label/input').fill_in(:with=> "#{name}")
+  end
+
 
 
 end
