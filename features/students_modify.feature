@@ -72,6 +72,7 @@ Feature: Modifying a Student
     When I click on the edit student button
     Then I should be taken the edit student form
 
+    @last
     Scenario: I want to delete a student from the group
     Given I am on a student’s page
     When I click on the delete student button

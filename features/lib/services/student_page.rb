@@ -19,12 +19,14 @@ include Capybara::DSL
   end
 
   def search_student_by_id id
-    all(:css, '.sorting_1').each do |person|
-      if person.text == id
-        return false
+    unless page.has_css?('.dataTables_empty')
+      all(:css, '.sorting_1').each do |person|
+        if person.text == id
+          return false
+        end
       end
     end
-    true
+    return true
   end
 
   # Checks if it takes you to that student's page

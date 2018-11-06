@@ -26,6 +26,8 @@ end
 
 Then("the student should be removed from the database") do
   visit('http://localhost:3000/students')
+  student_page.search_student "10"
+  expect(student_page.search_student_by_id "10").to be true
 end
 
 Given("I am on a new student page") do
