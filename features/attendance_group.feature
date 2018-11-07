@@ -9,18 +9,20 @@ Feature: Groups resource
     When I click on an individual group
     Then I should be redirected to that group's page
 
-
+  @edit_group
   Scenario: Inverting the active status
     Given I'm editting a group
     When I press active
     And I press update
     Then It should invert the active status
 
+  @edit_group
   Scenario: Updating the group without changing anything
     Given I'm editting a group
     When I press update
     Then nothing will be updated
 
+  @edit_group
   Scenario: Changing a field
     Given I'm editting a group
     When I make a change to a field
